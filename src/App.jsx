@@ -1,10 +1,15 @@
 import React from "react";
+import Cart from "./components/Cart";
+import Products from "./components/Products";
 
 function App() {
   return (
-    <React.Fragment>
-      <h1>Hello dear client</h1>
-    </React.Fragment>
+    <main>
+      <div className="container">
+        <Products />
+        <Cart />
+      </div>
+    </main>
   );
 }
 
