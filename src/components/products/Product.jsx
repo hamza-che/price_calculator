@@ -1,8 +1,9 @@
-import React from "react";
-import Button from "./Button";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { appState } from "../../contexts/AppContext";
 
-function product({ title, description, price, image }) {
+function Product({ product }) {
+  const { dispatch, cartState: { cart } } = appState();
+  const { title, image, price, description, id } = product;
   return (
     <div className="product">
       <div>
@@ -24,9 +25,14 @@ function product({ title, description, price, image }) {
           <span className="price">£{price}</span>
         </div>
       </div>
-      <Button />
+      <button
+        className="main-btn"
+        onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })}
+      >
+        ADD TO CART
+      </button>
     </div>
   );
 }
 
-export default product;
+export default Product;

@@ -1,19 +1,20 @@
-import React from "react";
+import { appState } from "../../contexts/AppContext";
 
 function Total() {
+  const { subtotal, totalDiscount, total } = appState();
   return (
     <div className="total">
       <div>
         <h4>Subtotal</h4>
-        <span>£6.05</span>
+        <span>£{subtotal.toFixed(2)}</span>
       </div>
       <div>
         <h4>Discount</h4>
-        <span>£0.5</span>
+        <span>£{totalDiscount.toFixed(2)}</span>
       </div>
       <div>
         <h4>Total</h4>
-        <span>£6.00</span>
+        <span>£{total.toFixed(2)}</span>
       </div>
     </div>
   );
