@@ -2,6 +2,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useLayoutEffect,
   useReducer,
   useState,
 } from "react";
@@ -23,7 +24,7 @@ function AppContextProvider({ children }) {
   const [ totalDiscount, setTotalDiscount ] = useState(0);
   const [ total, setTotal ] = useState(0);
 
-  // Calc Milk Price
+  // Calc Milk Offer
   function calcMilkPrice(qty, groupQty, indivPrice, groupPrice) {
     const groupCount = Math.floor(qty / groupQty);
     const indivCount = qty % groupQty;
@@ -31,7 +32,7 @@ function AppContextProvider({ children }) {
   }
 
   // Apply Offers
-  useEffect(
+  useLayoutEffect(
     () => {
       const butter = cartState.cart.find(item => item.title === "Butter");
 

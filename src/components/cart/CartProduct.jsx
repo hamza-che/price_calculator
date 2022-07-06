@@ -41,9 +41,9 @@ function CartProduct({ product }) {
       <div className="price">
         <del className="discount">
           {title === "Whole french bread" ? (
-            totalPrice - breadPrice !== 0 && `£${totalPrice.toFixed(2)}`
+            totalPrice - breadPrice > 0 && `£${totalPrice.toFixed(2)}`
           ) : title === "Fresh Swiss milk" ? (
-            totalPrice - milkPrice !== 0 && `£${totalPrice.toFixed(2)}`
+            totalPrice - milkPrice > 0 && `£${totalPrice.toFixed(2)}`
           ) : null}
         </del>
         <span>
