@@ -1,4 +1,5 @@
 import { appState } from "../../contexts/AppContext";
+import Price from "./Price";
 
 function CartProduct({ product }) {
   const { dispatch, milkPrice, breadPrice } = appState();
@@ -38,24 +39,7 @@ function CartProduct({ product }) {
           </div>
         </div>
       </div>
-      <div className="price">
-        <del className="discount">
-          {title === "Whole french bread" ? (
-            totalPrice - breadPrice > 0 && `£${totalPrice.toFixed(2)}`
-          ) : title === "Fresh Swiss milk" ? (
-            totalPrice - milkPrice > 0 && `£${totalPrice.toFixed(2)}`
-          ) : null}
-        </del>
-        <span>
-          £{title === "Whole french bread" ? (
-            breadPrice.toFixed(2)
-          ) : title === "Fresh Swiss milk" ? (
-            milkPrice.toFixed(2)
-          ) : (
-            totalPrice.toFixed(2)
-          )}
-        </span>
-      </div>
+      <Price {...{ milkPrice, breadPrice, totalPrice, title }} />
     </div>
   );
 }

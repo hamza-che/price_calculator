@@ -6,7 +6,7 @@ import {
   useReducer,
   useState,
 } from "react";
-import { cartReducer } from "./Reducers";
+import { cartReducer } from "../reducers/cartReducer";
 
 // Reducer initial state
 const initialState = {

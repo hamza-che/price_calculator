@@ -2,8 +2,8 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { appState } from "../../contexts/AppContext";
 
 function Product({ product }) {
-  const { dispatch, cartState: { cart } } = appState();
-  const { title, image, price, description, id } = product;
+  const { dispatch } = appState();
+  const { title, image, price, description } = product;
   return (
     <div className="product">
       <div>
